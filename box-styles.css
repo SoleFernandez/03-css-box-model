@@ -1,0 +1,116 @@
+* {
+    /* This selector matches every HTML element, effectively resetting the margin and padding properties for our web page. We also converted all our boxes to border-box, which, again, is a best practice. */
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+    /* Borders are common design elements, but they’re also invaluable for debugging. When you’re not sure how a box is being rendered, add a border: 1px solid red; declaration to it. This will clearly show the box’s padding, margin, and overall dimensions with just a single line of CSS. After you figured out why your stuff is broken, simply delete the rule. */
+    border: 2px solid red;
+}
+
+h1, p {
+    background-color: #dde0e3; /* Light gray */
+}
+
+em, strong {
+    background-color: #B2d6ff; /*Light blue */
+
+
+    /* display: block; */
+    /* Now, these elements act like our headings and paragraphs: they start on their own line, and they fill the entire width of the browser. This comes in handy when you’re trying to turn <a> elements into buttons or format <img/> elements (both of these are inline boxes by default). */
+}
+
+h1 {
+    padding: 50px;
+
+    /* The border property requires a new syntax that we’ve never seen before. First, we define the stroke width of the border, then its style, followed by its color. */
+    border-bottom: 1px solid #5d6063;
+}
+
+p {
+    /* padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px; */
+
+    /* padding: 20px 10px;  Vertical Horizontal */
+
+    /* The values are interpreted clockwise, starting at the top: */
+
+    padding: 20px 0 20px 10px; /* Top Right Bottom Left */
+
+    /* Margins define the space outside of an element’s border. Or, rather, the space between a box and its surrounding boxes. */
+
+    margin-top: 25px;
+    margin-bottom: 50px;
+
+    /* When you have two boxes with vertical margins sitting right next to each other, they will collapse. Instead of adding the margins together like you might expect, only the biggest one is displayed. */
+
+    /* Sometimes you do want to prevent the margins from collapsing. All you need to do is put another invisible element in between them:
+    <div style='padding-top: 1px'></div> */
+
+    /* A third option to avoid margin collapse is to stick to a bottom-only or top-only margin convention. For instance, if all your elements only define a bottom margin, there’s no potential for them to collapse. */
+
+    /* Finally, the flexbox layout scheme doesn’t have collapsing margins, so this isn’t really even an issue for modern websites. */
+}
+
+/* You can use any unit for the padding of an element, not just pixels. Again, em units are particularly useful for making your margins scale with the base font size. */
+
+/* Margins and padding can accomplish the same thing in a lot of situations, making it difficult to determine which one is the “right” choice. The most common reasons why you would pick one over the other are:
+
+* The padding of a box has a background, while margins are always transparent.
+* Padding is included in the click area of an element, while margins aren’t.
+* Margins collapse vertically, while padding doesn’t (we’ll discuss this more in the next section). */
+
+strong {
+    /* The horizontal margins display just like we’d expect, but this doesn’t alter the vertical space around our <strong> element one bit. */
+    /* margin: 50px; */
+
+    /* If we change margin to padding, we’ll discover that this isn’t exactly the case for a box’s padding. It’ll display the blue background; however, it won’t affect the vertical layout of the surrounding boxes. */
+    padding: 50px;
+}
+
+/* So, before you start banging your head against the wall trying to figure out why your top or bottom margin isn’t working, remember to check your display property. Trust us, this will happen to you eventually. */
+
+div {
+    color: #fff;
+    background-color: #5995da;
+    font-weight: bold;
+    padding: 20px;
+
+    /* The text-align property aligns the content and inline boxes inside of a block-level element. */
+
+    text-align: center;
+    border: 2px solid #5d6063;
+    border-radius: 5px;
+    width: 200px;
+
+    /* This forces the actual width of the box to be 200px—including padding and borders. */
+
+    box-sizing: border-box;
+
+    /* This is much more intuitive, and as a result, using border-box for all your boxes is considered a best practice among modern web developers. */
+
+    margin: 20px auto; /* Vertical Horizontl */
+
+    /* When you set the left and right margin of a block-level element to auto, it will center the block in its parent element. */
+
+    /* Note that this only works on blocks that have an explicit width defined on them. Remove that width: 200px line, and our button will be the full width of the browser, making “center alignment” meaningless. */
+
+}
+
+body {
+    text-align: center;
+
+    /* It will only align the content inside of our block boxes—not the blocks themselves. */
+}
+
+
+
+/* PARA ALINEAR BLOQUES */
+
+/* There are three methods for horizontally aligning block-level elements: “auto-margins” for center alignment, “floats” for left/right alignment, and “flexbox” for complete control over alignment. */
+
+
